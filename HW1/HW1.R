@@ -229,7 +229,6 @@ data %>% filter(just_entered) %>% group_by(idmen) %>%
 # the individual was not surveyed.
 
 # Here I just record the years surveyed for each individual in a list.
-# It's faster than the method used in 3.5
 attrition <- data %>% group_by(idind) %>% mutate(ls_year = list(unique(year))) %>%
   ungroup %>% mutate(attrition = !map2_lgl(year+1, ls_year, is.element)) %>%
   filter(year < max(year)) %>% group_by(year) %>% 

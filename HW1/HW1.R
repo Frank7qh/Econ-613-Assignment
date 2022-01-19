@@ -12,11 +12,7 @@ read_csv("./data/datind2016.csv") %>% filter(age >= 25, age <= 35) %>%
 datind2009 <- read_csv("./data/datind2009.csv")
 cross_table <- table(datind2009$gender, datind2009$profession)
 cross_table
-<<<<<<< HEAD
-print(xtable(cross_table, type = "latex"),file = "./output/cross_table.tex")
-=======
-print(xtable(cross_table, type = "latex"),file = "cross_table.tex")
->>>>>>> 5c5b1c9fca5a56f59ac80d4b8befbfcc4bbd21be
+print(xtable(cross_table, type = "latex"), file = "./output/cross_table.tex")
 rm(list = ls(all.names = TRUE))
 
 # 1.6
